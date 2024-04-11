@@ -13,6 +13,7 @@ public class Test5 {
         //2. 필드는 오버라이드되면 타입을 따른다.
         //3. 메소드는 오버라이딩되면 무조건!!!!   자식을 따른다..  (다형성)
         Parent pc = new Child();
+
         System.out.println(pc.i);
         System.out.println(pc.getI());
 

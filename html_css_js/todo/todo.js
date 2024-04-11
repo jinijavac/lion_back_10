@@ -5,7 +5,9 @@ let basicDatas = [
 ];
 
 const deleteTodo = (id) => {
-  basicDatas = basicDatas.filter((todo) => todo.id !== id);
+  console.log(id);
+  basicDatas = basicDatas.filter((todo) => todo.id != id);
+  console.log(basicDatas);
 };
 
 const addTodoItem = (todoObj) => {
@@ -93,7 +95,8 @@ inputField.addEventListener("keydown", (event) => {
 });
 
 const updateTodo = (id) => {
-  const todo = basicDatas.find((todo) => todo.id === id);
+  const todo = basicDatas.find((todo) => todo.id == id);
+  console.log(todo);
   if (todo) {
     todo.done = !todo.done;
   }
