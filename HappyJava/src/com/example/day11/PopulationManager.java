@@ -1,27 +1,48 @@
-### 실습 예제 : 도시의 인구 관리 시스템
+package com.example.day11;
 
-#### 목표
-- 도시 이름을 키로, 해당 도시의 인구를 값으로 사용하는 Map을 구성합니다.
-- 도시의 인구 정보를 추가, 수정, 삭제, 조회할 수 있는 기능을 구현합니다.
-
-#### 과제
-1. `HashMap`을 사용하여 여러 도시의 이름과 인구를 관리합니다.
-2. 사용자 입력을 받아 도시 인구 정보를 추가하거나 수정합니다.
-3. 특정 도시의 인구를 조회하거나 전체 도시의 인구 정보를 출력합니다.
-4. 도시의 인구 정보를 삭제하는 기능을 추가합니다.
-
-#### 예제 코드
-
-```java
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class PopulationManager {
-    //알맞게 구현해 주세요.
+    private Map<String, Integer> populationMap = new HashMap<>();
+
+    // 명령 상수 정의
+    private static final int ADD_OR_UPDATE = 1;
+    private static final int REMOVE = 2;
+    private static final int DISPLAY = 3;
+    private static final int DISPLAY_ALL = 4;
+    private static final int EXIT = 5;
+
+    public void addOrUpdateCity(String city, int population) {
+        populationMap.put(city, population);
+        System.out.println(city + "의 인구가 " + population + "으로 설정되었습니다.");
+    }
+
+    public void removeCity(String city) {
+        if (populationMap.containsKey(city)) {
+            populationMap.remove(city);
+            System.out.println(city + "의 인구 정보가 삭제되었습니다.");
+        } else {
+            System.out.println(city + "의 정보를 찾을 수 없습니다.");
+        }
+    }
+
+    public void displayPopulation(String city) {
+        if (populationMap.containsKey(city)) {
+            System.out.println(city + "의 인구는 " + populationMap.get(city) + "명 입니다.");
+        } else {
+            System.out.println(city + "의 정보를 찾을 수 없습니다.");
+        }
+    }
+
+    public void displayAll() {
+        System.out.println("모든 도시의 인구 정보:");
+        populationMap.forEach((city, population) -> System.out.println(city + ": " + population + "명"));
+    }
 
     public static void main(String[] args) {
- PopulationManager manager = new PopulationManager();
+        PopulationManager manager = new PopulationManager();
         Scanner scanner = new Scanner(System.in);
 
         manager.addOrUpdateCity("서울", 10000000);
@@ -61,7 +82,6 @@ public class PopulationManager {
                     System.out.println("알 수 없는 명령입니다.");
             }
         }
-        scanner.close();    }
+        scanner.close();
+    }
 }
-```
-
