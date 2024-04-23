@@ -77,7 +77,11 @@ class ChatThread extends Thread {
             while ((msg = in.readLine()) != null) {
                 if ("/quit".equalsIgnoreCase(msg))
                     break;
-                broadcast(id + " : " + msg);
+
+                if (msg.indexOf("/to") == 0)
+                    sendMsg(msg);
+                else
+                    broadcast(id + " : " + msg);
             }
         } catch (IOException e) {
             System.out.println(e);
@@ -106,7 +110,27 @@ class ChatThread extends Thread {
         }
     }
 
-    //전체 사용자에게 알려주는 메서드
+    //메시지를 특정 사용자에게만 보내는 메서드
+    public void sendMsg(String msg) {
+        int firstSpaceIndex = msg.indexOf(" ");
+        if (firstSpaceIndex == -1) return; //공백이 없다면....
+
+        int secondSpaceIndex = msg.indexOf(" ", firstSpaceIndex + 1);
+        if (secondSpaceIndex == -1) return; //두번재 공백이 없다는 것도 메시지가 잘못된거니까..
+
+        String to = msg.substring(firstSpaceIndex + 1, secondSpaceIndex);
+        String message = msg.substring(secondSpaceIndex + 1);
+
+        //to(수신자)에게 메시지 전송.
+        PrintWriter pw = chatClients.get(to);
+        if (pw != null) {
+            pw.println(id + "님으로부터 온 비밀 메시지 : " + message);
+        } else {
+            System.out.println("오류 : 수신자 " + to + " 님을 찾을 수 없습니다.");
+        }
+    }
+
+    //메지시를 전체 사용자에게 보내는 메서드
     public void broadcast(String msg) {
 //        for (PrintWriter out : chatClients.values()) {
 //            out.println(msg);
