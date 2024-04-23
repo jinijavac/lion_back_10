@@ -11,7 +11,7 @@ public class EchoClientExam {
     public static void main(String[] args) throws Exception {
         //1. Socket 생성
         Socket sock = new Socket("127.0.0.1", 9999);
-        System.out.println(9999 + "포트와 잘 연결 되었습니다.");
+        System.out.println(10001 + "포트와 잘 연결 되었습니다.");
 
         //2. 데이터 읽고 쓰기
         PrintWriter pw = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()));

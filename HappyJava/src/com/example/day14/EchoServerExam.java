@@ -28,7 +28,7 @@ public class EchoServerExam {
             System.out.println("클라이언트에서 받은 메시지 : " + line);
 
             //클라이언트가 보낸 메시지를 그대로 다시 클라이언트에게 보낸다.
-            pw.println(line);
+            pw.println("server:::" + line);
             pw.flush();
         }
         //4. 연결종료!!
