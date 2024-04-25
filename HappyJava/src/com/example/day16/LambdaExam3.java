@@ -2,7 +2,7 @@ package com.example.day16;
 
 import java.util.function.*;
 
-public class RambdaExam3 {
+public class LambdaExam3 {
     public static void main(String[] args) {
         //Predicate
         //조건을 테스트하는데 사용.  boolean값 반환

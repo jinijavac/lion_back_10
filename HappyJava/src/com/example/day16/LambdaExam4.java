@@ -7,7 +7,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class RambdaExam4 {
+public class LambdaExam4 {
     public static void main(String[] args) {
         //메소드참조 ::
         //1. 정적 메서드 참조
