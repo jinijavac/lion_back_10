@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="UserPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+<!--        <class>com.example.jpa.User</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.School</class>-->
+<!--        <class>com.example.jpa.Student</class>-->
+<!--        <class>com.example.jpa.Book</class>-->
+<!--        <class>com.example.jpa.Author</class>-->
+<!--        <class>com.example.jpa.Employee</class>-->
+<!--        <class>com.example.jpa.Project</class>-->
+<!--        <class>com.example.jpa.Person</class>-->
+<!--        <class>com.example.jpa.Passport</class>-->
+<!--        <class>com.example.jpa.Car</class>-->
+<!--        <class>com.example.jpa.Truck</class>-->
+<!--        <class>com.example.jpa.Car2</class>-->
+<!--        <class>com.example.jpa.Truck2</class>-->
+        <class>com.example.jpa.Car3</class>
+        <class>com.example.jpa.Truck3</class>
+        <class>com.example.jpa.Company</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/exampledb"/>
+            <property name="jakarta.persistence.jdbc.user" value="carami"/>
+            <property name="jakarta.persistence.jdbc.password" value="kang1234"/>
+
+
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
