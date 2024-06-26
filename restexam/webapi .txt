@@ -1,0 +1,29 @@
+web api  --   RESTful  -- Rest api  (지켜야하는 너무 많은 규칙과 어려움이 있어서.. 모두 다 잘 지키지는 못한다.) 
+
+url  --  자원  (복수)			method -- 행위 
+
+http://localhost:8080/api/todos          ---   Get (R)  --  todoList 리턴 
+
+http://localhost:8080/api/todos/{id}     ---   Get (R)  -- id에 해당하는 Todo 리턴 
+
+http://localhost:8080/api/todos          ---   Post (C)   --  todo 한 건 저장 
+
+http://localhost:8080/api/todos          ---   put/patch (U)  -- todo 수정 
+
+http://localhost:8080/api/todos          ---   delete  (D)   -- todo 삭제 
+
+
+-- 
+             boards/{id}/replys    	  --  Get 	 -- 1번 아이디에해당하는 게시글을 댓글들..   
+             boards/{id}/replys/{id} 	  -- 	--   1번 아이디에해당하는 게시글을 댓글들..   
+
+[{id:1,todo:"todo1",done:false},{id:2,todo:"todo2",done:false} ]
+
+<todo>
+	<id>1</id>
+	<todo>todo1</todo>
+	<done>false</done>
+<todo>
+
+
+1:::todo1^^false

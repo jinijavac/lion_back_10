@@ -1,0 +1,23 @@
+### POST
+POST http://localhost/api/memos
+Content-Type: application/json
+
+{
+  "memo": "carami memo2"
+}
+
+### GET /memos/{id}
+GET http://localhost/api/memos/1
+Accept: application/json
+
+### PUT
+PUT http://localhost/api/memos/1
+Content-Type: application/json
+
+{
+  "content": "carami memo Update"
+}
+
+### DELETE
+DELETE http://localhost/api/memos/1
+Accept: application/json

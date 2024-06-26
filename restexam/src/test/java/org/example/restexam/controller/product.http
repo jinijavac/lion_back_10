@@ -1,0 +1,32 @@
+### POST
+POST http://localhost/api/products
+Content-Type: application/json
+
+{
+  "name": "pen2",
+  "price": 2.22
+}
+
+
+### GET 요청
+GET http://localhost/api/products
+Accept: application/json
+
+
+### GET 요청
+GET http://localhost/api/products/2
+Accept: application/json
+
+### DELETE 요청
+DELETE http://localhost/api/products/1
+Accept: application/json
+
+
+### PUT 요청
+PUT http://localhost/api/products/2
+Content-Type: application/json
+
+{
+  "name": "pen update",
+  "price": 22.0
+}
